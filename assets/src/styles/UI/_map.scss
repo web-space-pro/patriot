@@ -1,0 +1,11 @@
+@use '../helpers/index' as *;
+#map{
+  height: rem(320);
+  -webkit-filter: grayscale(70%);
+  filter: grayscale(70%);
+  border-radius: rem(24);
+  overflow: hidden;
+  @include media(md){
+    height: rem(400);
+  }
+}

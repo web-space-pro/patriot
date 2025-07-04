@@ -1,0 +1,67 @@
+@use '../helpers/index' as *;
+.information{
+  padding: fluid(40,20) 0;
+  &__head{
+    margin-bottom: fluid(40,20);
+    max-width: rem(1000);
+  }
+  &__facts{
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+    justify-content: space-between;
+    @include media(md){
+      flex-direction: row;
+    }
+    &--fact{
+      background: var(--bg-fact);
+      padding: fluid(40,20) fluid(32,18);
+      text-align: center;
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.35s, box-shadow 0.4s, transform 0.25s;
+
+      &:hover {
+        box-shadow: 0 16px 48px 0 #09141c66, 0 2px 6px 0 #3b799950;
+        @include media(md){
+          transform: translateY(-20px) scale(1.04);
+        }
+
+      }
+      //transition:
+      //        box-shadow 0.4s cubic-bezier(.4,2,.6,1),
+      //        transform 0.4s cubic-bezier(.4,2,.6,1),
+      //        background 0.3s;
+      //box-shadow: 0 4px 24px 0 #10202b33;
+      //&:hover {
+      //  transform: translateY(-20px) scale(1.04) rotateX(7deg);
+      //  box-shadow: 0 16px 48px 0 #09141c66, 0 2px 6px 0 #3b799950;
+      //}
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        background: #52646d;
+      }
+      &::before {
+        top: 0;
+        left: 0;
+        clip-path: polygon(0 0, 100% 0, 0 100%);
+      }
+      &::after {
+        bottom: 0;
+        right: 0;
+        clip-path: polygon(100% 0, 100% 100%, 0 100%);
+      }
+
+      h4{
+        font-size: fluid(32,24);
+        line-height: 125%;
+        margin-bottom: fluid(24,18);
+      }
+    }
+  }
+}

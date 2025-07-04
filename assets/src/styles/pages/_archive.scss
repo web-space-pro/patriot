@@ -1,0 +1,15 @@
+@use '../helpers/index' as *;
+.tplArchive{
+  margin: fluid(100,50) 0;
+}
+.grid-archive{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: rem(24);
+  @include media(md){
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include media(xl){
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

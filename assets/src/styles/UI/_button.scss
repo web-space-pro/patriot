@@ -1,0 +1,25 @@
+@use '../helpers/index' as *;
+
+.btn{
+  font-family: var(--font-family);
+  box-shadow: none;
+  background: var(--accent);
+  padding: rem(15) rem(24);
+  font-weight: 400;
+  font-size: fluid(16,14);
+  line-height: 150%;
+  text-transform: uppercase;
+  position: relative;
+  display: block;
+  text-align: center;
+  @include media(rxl){
+    padding: rem(20) rem(32);
+  }
+  &:hover{
+    box-shadow: rgba(187, 24, 24, 0.6) 0px 8px 24px;
+    color: var(--white);
+  }
+  &:active, &:focus{
+    color: var(--white);
+  }
+}

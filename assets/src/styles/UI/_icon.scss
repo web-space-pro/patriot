@@ -1,0 +1,24 @@
+@use '../helpers/index' as *;
+.icon{
+  width: rem(22);
+  height: rem(22);
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  @include media(sm){
+    width: rem(24);
+    height: rem(24);
+  }
+  &:hover {
+    &:after {
+      transform: scale(1);
+    }
+    svg{
+      transform: scale(1.05);
+    }
+  }
+  svg{
+    position: relative;
+    z-index: 1;
+  }
+}

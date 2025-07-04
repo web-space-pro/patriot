@@ -1,0 +1,112 @@
+@use '../helpers/index' as *;
+
+.hero{
+  min-height: 100dvh;
+  height: rem(690);
+  background-position:  bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: rem(120);
+  @include media(rxl){
+    height: rem(998);
+  }
+  h1{
+    text-align: center;
+    font-size: fluid(90,36);
+    @include media(rxl){
+      font-size: fluid(110,75);
+    }
+  }
+  &__text{
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: rem(16);
+    height: 60dvh;
+    @include media(md){
+      padding-top: rem(40);
+      height: auto;
+      flex-direction: row;
+    }
+    @include media(lg){
+      max-width: rem(800);
+    }
+    @include media(rxl){
+      padding-top: rem(70);
+      max-width: rem(990);
+    }
+    p{
+      font-family: var(--second-family);
+      font-weight: 400;
+      font-size: rem(20);
+      line-height: 140%;
+      letter-spacing: -0.02em;
+      color: var(--paragraph);
+      text-align: center;
+      @include media(md){
+        text-align: left;
+      }
+      strong,bold,b{
+        font-weight: 600;
+      }
+      &:first-child{
+        max-width: rem(170);
+        margin: 0 auto;
+        //padding-top: 10dvh;
+        @include media(md){
+          margin: auto;
+          padding-top: 0;
+        }
+        @include media(lg){
+          margin-left: 10vmax;
+        }
+        @include media(rxl){
+          //margin-top: rem(130);
+          margin-left: 0;
+        }
+      }
+      &:last-child{
+        max-width: rem(290);
+        margin: 0 auto;
+        //padding-top: rem(200);
+        @include media(md){
+          padding-top: 0;
+          margin: 0 0 0 auto;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

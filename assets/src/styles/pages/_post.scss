@@ -1,0 +1,9 @@
+@use '../helpers/index' as *;
+.simplePost{
+  padding-top: rem(100);
+  padding-bottom: fluid(100,50);
+  min-height: calc(100dvh - 100px);
+  p{
+    margin-bottom: rem(16);
+  }
+}

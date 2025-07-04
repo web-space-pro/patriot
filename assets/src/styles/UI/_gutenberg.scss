@@ -1,0 +1,71 @@
+@use '../helpers/index' as *;
+.gutenberg{
+  padding-top: rem(15);
+  .wp-block-content{
+    margin: fluid(40, 25) 0;
+  }
+  a{
+    color: var(--color-secondary);
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+.wp-block-content{
+  line-height: 1.5;
+  h2{
+    margin-bottom: fluid(18, 16);
+    line-height: 1.5;
+    font-size: rem(20);
+  }
+  h3{
+    line-height: 1.5;
+    margin-bottom: fluid(16, 14);
+  }
+  h4{
+    margin-bottom: fluid(14, 12);
+  }
+  strong{
+    font-family: var(--font-family);
+  }
+}
+.wp-block-separator{
+  margin-bottom: rem(16);
+}
+.wp-block-image{
+  margin: fluid(75,50) 0;
+  img{
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.wp-block-cover{
+  margin: fluid(75,50) 0;
+}
+.wp-block-quote {
+  border-left: .25em solid;
+  margin: 0 0 1.75em;
+  padding-left: 1em;
+}
+.wp-block-table {
+  margin: 0 0 1em;
+  table{
+    border-collapse: collapse;
+  }
+}
+.wp-block-gallery{
+  display: flex;
+  gap: rem(15);
+  align-items: normal;
+  @include media(md){
+    gap: rem(25);
+  }
+}
+.wp-block-list{
+  list-style: inherit;
+  padding-left: rem(12);
+  margin: rem(16) 0;
+  li{
+    margin-bottom: rem(8);
+  }
+}

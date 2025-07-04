@@ -1,0 +1,10 @@
+@use '../helpers/index' as *;
+.map{
+  padding: fluid(40,20) 0;
+}
+#map {
+  clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+  overflow: hidden;
+  -webkit-filter: grayscale(70%);
+  min-height: rem(360);
+}

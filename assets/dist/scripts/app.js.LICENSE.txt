@@ -1,0 +1,55 @@
+/*!
+  * PhotoSwipe 5.4.4 - https://photoswipe.com
+  * (c) 2024 Dmytro Semenov
+  */
+
+/*!
+  * PhotoSwipe Lightbox 5.4.4 - https://photoswipe.com
+  * (c) 2024 Dmytro Semenov
+  */
+
+/*!
+ * GSAP 3.13.0
+ * https://gsap.com
+ *
+ * @license Copyright 2008-2025, GreenSock. All rights reserved.
+ * Subject to the terms at https://gsap.com/standard-license
+ * @author: Jack Doyle, jack@greensock.com
+*/
+
+/*!
+ * Observer 3.13.0
+ * https://gsap.com
+ *
+ * @license Copyright 2008-2025, GreenSock. All rights reserved.
+ * Subject to the terms at https://gsap.com/standard-license
+ * @author: Jack Doyle, jack@greensock.com
+*/
+
+/*!
+ * ScrollTrigger 3.13.0
+ * https://gsap.com
+ *
+ * @license Copyright 2008-2025, GreenSock. All rights reserved.
+ * Subject to the terms at https://gsap.com/standard-license
+ * @author: Jack Doyle, jack@greensock.com
+*/
+
+/*!
+ * SplitText 3.13.0
+ * https://gsap.com
+ *
+ * @license Copyright 2025, GreenSock. All rights reserved. Subject to the terms at https://gsap.com/standard-license.
+ * @author: Jack Doyle
+ */
+
+/*!
+ * jQuery JavaScript Library v3.7.1
+ * https://jquery.com/
+ *
+ * Copyright OpenJS Foundation and other contributors
+ * Released under the MIT license
+ * https://jquery.org/license
+ *
+ * Date: 2023-08-28T13:37Z
+ */

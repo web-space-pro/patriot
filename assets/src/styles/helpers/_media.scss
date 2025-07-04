@@ -1,0 +1,39 @@
+@use './functions' as *;
+
+$laptop: 1440.98;
+$tablet: 1023.98;
+$mobile: 767.98;
+$mobile-s: 480.98;
+
+$media-types: (
+        xs: '(min-width: 360px)',
+        sm: '(min-width: 600px)',
+        md: '(min-width: 768px)',
+        lg: '(min-width: 992px)',
+        xl: '(min-width: 1024px)',
+        rxl: '(min-width: 1280px)',
+        hd: '(min-width: 1366px)',
+        rwd: '(min-width: 1440px)',
+        rxwd: '(min-width: 1600px)',
+);
+@mixin media($media) {
+  @media #{map-get($media-types, $media)} {
+    @content;
+  }
+}
+
+@mixin hover($hasActiveEffectOnMobile: true) {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+
+  @if ($hasActiveEffectOnMobile) {
+    @media (any-hover: none) {
+      &:active {
+        @content;
+      }
+    }
+  }
+}

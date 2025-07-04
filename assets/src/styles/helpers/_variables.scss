@@ -1,0 +1,30 @@
+@use 'index' as *;
+
+:root {
+
+  --bg: #001e2e;
+  --bg2:#00141f;
+  --bg-fact:#0d2938;
+  --paragraph: #bfc7cb;
+  --hint: #60717b;
+  --white: #f1f1f1;
+  --black: #333333;
+  --gray: #777777;
+  --accent: #bb1818;
+
+  --bg-2: #fff;
+  --button-text: #f9f9f9;
+  --button-text-2: #e62e34;
+  --button-fill-2: #ffe6e6;
+  --text-heading: #323232;
+  --text-paragraph: #666;
+  --text-hint: #999;
+
+  --font-family: "Furore", sans-serif;
+  --second-family: "InterTight", sans-serif;
+  --third-family: "Raleway", sans-serif;
+  --font3: "Inter", sans-serif;
+
+  --container-width: 100%;
+  --container-padding-x: #{fluid(96,16)};
+}

@@ -1,0 +1,29 @@
+@use '../helpers/index' as *;
+.container{
+  max-width: var(--container-width);
+  width: var(--container-width);
+  padding-left: var(--container-padding-x);
+  padding-right: var(--container-padding-x);
+}
+
+.flex{
+  display: flex;
+}
+.item-center{
+  align-items: center;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.gap-4{
+  gap: rem(16);
+}
+
+.flex-wrap{
+  flex-direction: column;
+  gap: rem(16);
+  display: none;
+  @include media(md){
+    flex-direction: row;
+  }
+}

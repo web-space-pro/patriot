@@ -1,0 +1,47 @@
+@use '../helpers/index' as *;
+.error404{
+  position: relative;
+  //padding-top: rem(100);
+  //padding-bottom: rem(50);
+  &__content{
+    text-align: center;
+    min-height: calc(100dvh - 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  h1{
+    @include fluid-text(96,56);
+    color: var(--accent);
+    margin-bottom: 0;
+  }
+  h2{
+    @include fluid-text(42,20);
+  }
+  .btn{
+    margin-top: rem(30);
+  }
+
+  .decor{
+    width: fluid(240,100);
+    height: fluid(240,100);
+    position: absolute;
+    &.--first{
+      top: 10%;
+      right: 0;
+      @include media(sm){
+        top: 10%;
+      }
+    }
+    &.--second{
+      left: -7%;
+      top: 20%;
+      transform: rotate(22deg);
+      @include media(sm){
+        left: -4%;
+        top: 19%;
+      }
+    }
+  }
+}

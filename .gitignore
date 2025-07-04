@@ -1,0 +1,16 @@
+# system files
+.DS_Store
+.idea
+/.DS_Store
+/.idea
+# Node modules
+/node_modules/
+node_modules
+node_modules/
+
+# Log files
+*.log
+
+# htaccess
+/.htaccess
+

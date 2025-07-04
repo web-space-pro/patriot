@@ -1,0 +1,9 @@
+@use '../helpers/index' as *;
+.simplePage{
+  padding-top: rem(120);
+  padding-bottom: fluid(50,25);
+  min-height: calc(100dvh - 100px);
+  p{
+    margin-bottom: rem(16);
+  }
+}
