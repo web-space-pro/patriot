@@ -16,7 +16,7 @@ function patriot_theme_scripts()
 
 	wp_enqueue_script( 'app', get_template_directory_uri() . '/assets/dist/scripts/app.js', array(), $ver, true);
 
-	wp_localize_script( 'app', 'app_vars', array(
+	wp_localize_script( 'app', 'appAjax', array(
 		'ajaxUrl' => admin_url("admin-ajax.php")
 	) );
 

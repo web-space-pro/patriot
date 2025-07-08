@@ -11,7 +11,7 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Ничего не найдено', 'patriot' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'patriot' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -34,9 +34,9 @@
 		elseif ( is_search() ) :
 			?>
 
-			<p><?php esc_html_e( 'Извините, но ничего не соответствует вашим поисковым запросам. Попробуйте еще раз с другими ключевыми словами.', 'patriot' ); ?></p>
+			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'patriot' ); ?></p>
 			<?php
-			//765get_search_form();
+			get_search_form();
 
 		else :
 			?>

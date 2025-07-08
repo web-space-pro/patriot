@@ -7,6 +7,7 @@ let velocity = 0;
 let lastMoveTime = 0;
 let autoScrolling = true;
 let rafId;
+window.hasDragged = false;
 window.modalIsOpen = false;
 window.stopAutoScroll = stopAutoScroll;
 window.startAutoScroll = startAutoScroll;
@@ -51,6 +52,7 @@ function startAutoScroll() {
 // Mouse events
 slider.addEventListener('mousedown', (e) => {
     isDragging = true;
+    window.hasDragged = false;
     stopAutoScroll();
     startX = e.pageX - offset;
     lastX = e.pageX;
@@ -60,26 +62,36 @@ slider.addEventListener('mousedown', (e) => {
 });
 window.addEventListener('mousemove', (e) => {
     if (!isDragging) return;
+    if (e.buttons === 0) {
+        // кнопка отпущена, но событие еще идет
+        isDragging = false;
+        slider.style.cursor = '';
+        return;
+    }
+
+    const deltaX = Math.abs(e.pageX - lastX);
+    if (deltaX > 5) {
+        window.hasDragged = true;
+    }
+
     e.preventDefault();
     const x = e.pageX - startX;
     const now = Date.now();
-    velocity = (e.pageX - lastX) / (now - lastMoveTime) * 20; // скорость в px/frame
+    velocity = (e.pageX - lastX) / (now - lastMoveTime) * 20;
     lastX = e.pageX;
     lastMoveTime = now;
     setTransform(x);
 });
+
 window.addEventListener('mouseup', () => {
-    if (isDragging) {
-        isDragging = false;
-        // Легкая инерция если быстро бросили
-        if (Math.abs(velocity) > 1) {
-            autoScrolling = false;
-        } else {
-            velocity = 0;
-            startAutoScroll();
-        }
-        slider.style.cursor = '';
+    isDragging = false;
+    if (Math.abs(velocity) > 1) {
+        autoScrolling = false;
+    } else {
+        velocity = 0;
+        startAutoScroll();
     }
+    slider.style.cursor = '';
 });
 
 // Touch events
@@ -120,6 +132,9 @@ document.addEventListener('selectstart', (e) => {
 document.querySelectorAll('.slider-item img').forEach(img => {
     img.setAttribute('draggable', 'false');
     img.addEventListener('dragstart', e => e.preventDefault());
+});
+document.querySelectorAll('.slider-item a').forEach(link => {
+    link.addEventListener('dragstart', e => e.preventDefault());
 });
 
 

@@ -1,0 +1,26 @@
+@use '../helpers/index' as *;
+.blog{
+  margin: fluid(40,20) 0;
+  &__head{
+    max-width: rem(590);
+    margin-bottom: fluid(40,20);
+  }
+  &__title{
+    margin-bottom: rem(16);
+    text-align: left;
+  }
+  &__content{
+    font-size: fluid(20,16);
+    line-height: 140%;
+  }
+  &__link{
+    margin-top: fluid(40,20);
+    text-align: center;
+    @include media(md){
+      text-align: left;
+    }
+    a{
+      display: inline-block;
+    }
+  }
+}

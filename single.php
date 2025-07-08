@@ -11,32 +11,57 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-        <section class="simplePost">
-            <div class="container">
-                <?php
-                while ( have_posts() ) :
-                    the_post();
+        <div class="post-blocks-wrapper">
+            <section class="simplePost">
+                <div class="container">
+                    <?php
+                    while ( have_posts() ) :
+                        the_post();
+                        get_template_part( 'content-parts/content', 'single' );
+                    endwhile;
+                    ?>
+                </div>
+            </section>
+            <?php
+            // получаем 3 других поста того же типа
+            $related_posts = new WP_Query([
+                'post_type'      => get_post_type(),
+                'posts_per_page' => 3,
+                'post__not_in'   => [ get_the_ID() ],
+                'orderby'        => 'date',
+                'order'          => 'DESC'
+            ]);
 
-                    get_template_part( 'content-parts/content', get_post_type() );
-
-//                    the_post_navigation(
-//                        array(
-//                            'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'patriot' ) . '</span> <span class="nav-title">%title</span>',
-//                            'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'patriot' ) . '</span> <span class="nav-title">%title</span>',
-//                        )
-//                    );
-
-//                 If comments are open or we have at least one comment, load up the comment template.
-//                    if ( comments_open() || get_comments_number() ) :
-//                        comments_template();
-//                    endif;
-
-                endwhile; // End of the loop.
+            if ( $related_posts->have_posts() ) :
                 ?>
-            </div>
-        </section>
-	</main>
-
+                <section class="related-posts">
+                    <div class="container">
+                        <h2 class="related-posts__title"><span>Читайте также</span></h2>
+                        <div class="loop-posts">
+                            <?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
+                                <article class="loop-posts__item">
+                                    <a href="<?php the_permalink(); ?>" class="loop-posts__link">
+                                        <?php if ( has_post_thumbnail() ) : ?>
+                                            <div class="loop-posts__image">
+                                                <?php the_post_thumbnail('medium', ['class' => 'related-posts__image']); ?>
+                                            </div>
+                                        <?php endif; ?>
+                                        <div class="loop-posts__content">
+                                            <time class="loop-posts__date"><?php echo get_the_date('d.m.Y'); ?></time>
+                                            <h3 class="loop-posts__title"><?php the_title(); ?></h3>
+                                            <p class="loop-posts__excerpt"><?php echo wp_trim_words( get_the_excerpt(), 12, '...' ); ?></p>
+                                        </div>
+                                    </a>
+                                </article>
+                            <?php endwhile; ?>
+                        </div>
+                    </div>
+                </section>
+            <?php
+            endif;
+            wp_reset_postdata();
+            ?>
+        </div>
+    </main>
 <?php
-//get_sidebar();
 get_footer();

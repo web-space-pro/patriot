@@ -35,7 +35,7 @@ get_header();
                 ?>
                 <section class="simplePage">
                     <div class="container">
-                        <?php get_template_part( 'content-parts/content', get_post_type() ); ?>
+                        <?php get_template_part( 'content-parts/content', get_post_type('page') ); ?>
                     </div>
                 </section>
             <?php
@@ -44,7 +44,7 @@ get_header();
         else: ?>
             <section class="simplePage">
                 <div class="container">
-                    <?php get_template_part( 'content-parts/content', get_post_type() ); ?>
+                    <?php get_template_part( 'content-parts/content', get_post_type('page') ); ?>
                 </div>
             </section>
         <?php endif; ?>

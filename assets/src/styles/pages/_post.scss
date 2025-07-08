@@ -1,9 +1,88 @@
 @use '../helpers/index' as *;
 .simplePost{
-  padding-top: rem(100);
-  padding-bottom: fluid(100,50);
+  padding-top: rem(120);
+  padding-bottom: fluid(100,30);
   min-height: calc(100dvh - 100px);
+  @include media(md){
+    padding-top: rem(160);
+  }
   p{
     margin-bottom: rem(16);
+  }
+  .post {
+    margin: 0 auto;
+    max-width: rem(900);
+    @include media(rxwd){
+      max-width: rem(1000);
+    }
+    &__thumbnail-container {
+      overflow: hidden;
+      max-height: rem(440);
+      clip-path: polygon(32px 0, 100% 0, 100% calc(100% - 32px), calc(100% - 32px) 100%, 0 100%, 0 32px);
+    }
+    &__thumbnail {
+      aspect-ratio: auto;
+      width: 100%;
+      object-fit: cover;
+    }
+    &__entry-meta{
+      margin: rem(20) 0;
+      a{
+        line-height: 150%;
+        font-size: rem(16);
+        color: var(--hint);
+      }
+    }
+    &__header {
+      margin-top: rem(20);
+      display: flex;
+      flex-direction: column;
+    }
+    &__title {
+      text-align: left;
+      font-size: fluid(50,30);
+    }
+    &__date {
+      text-align: left;
+      order: -1;
+      line-height: 150%;
+      font-size: rem(16);
+      color: var(--hint);
+    }
+    &__content {
+      margin-top: rem(32);
+      font-size: fluid(20,16);
+      line-height: 160%;
+      h3{
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: fluid(28,20);
+        line-height: 129%;
+        text-transform: none;
+        margin-bottom: fluid(40,20);
+      }
+      h2,h3,h4,h5,h6{
+        color: var(--white);
+      }
+      h2{
+        margin-top: fluid(20,16);
+        margin-bottom: fluid(32,20);
+      }
+    }
+  }
+  .wp-block-image{
+    clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+  }
+  .wp-block-gallery{
+    margin: fluid(32,20) 0;
+  }
+}
+
+
+.related-posts {
+  padding-top: fluid(30, 20);
+  padding-bottom: fluid(50,25);
+  &__title {
+    margin-bottom: fluid(40, 25);
   }
 }

@@ -8,6 +8,7 @@ try {
    require("./modules/gallery");
    require("./modules/slider-track");
    require("./modules/modal");
+   // require("./modules/sortPost");
 }
 catch (e) {
     console.log('JS ERROR!!!', e);

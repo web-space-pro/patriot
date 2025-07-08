@@ -10,7 +10,13 @@
  */
 
 ?>
-
+    <section class="map">
+        <div class="container">
+            <div class="map__wrap">
+                <div id="map"></div>
+            </div>
+        </div>
+    </section>
 <?php
 if (function_exists('get_field')) {
     $address = get_field('o_address', 'options');
@@ -36,7 +42,7 @@ if (function_exists('get_field')) {
           <div class="footer__top">
               <div class="footer__contacts">
                   <div>
-                      <h2>Контакты</h2>
+                      <h2><span>Контакты</span></h2>
                       <div class="footer__contacts--inner">
                           <div class="footer__contacts-phone">
                               <a href="tel:<?=$phone?>"><?=$phone?></a>

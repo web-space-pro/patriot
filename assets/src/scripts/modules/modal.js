@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Открытие модалки (и закрытие остальных)
     document.querySelectorAll('.btn-modal-open').forEach(btn => {
         btn.addEventListener('click', function (e) {
+            if (window.hasDragged) {
+                e.preventDefault();
+                return;
+            }
             e.preventDefault();
             const modalId = btn.getAttribute('data-modal');
             const modal = document.getElementById(modalId);
@@ -79,6 +83,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.querySelectorAll('.open-service').forEach(btn => {
     btn.addEventListener('click', function(e) {
+        if (window.hasDragged) {
+            e.preventDefault();
+            return;
+        }
         e.preventDefault();
 
         // получаем данные

@@ -25,6 +25,7 @@
       gap: rem(16);
       will-change: transform;
       transition: box-shadow 0.2s;
+      user-select: none;
       @include  media(sm){
         gap: rem(24);
       }
