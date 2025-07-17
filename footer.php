@@ -73,7 +73,12 @@ if (function_exists('get_field')) {
                               </ul>
                       </div>
                       <div class="footer__contacts--info">
-                          <address><?=$address?></address>
+                          <?php if(!empty($address)): ?>
+                              <a href="yandexnavi://map_search?text=<?= urlencode($address) ?>"
+                                 onclick="setTimeout(function(){ window.open('https://yandex.ru/maps/?text=<?= urlencode($address) ?>', '_blank'); }, 500);">
+                                  <?= htmlspecialchars($address) ?>
+                              </a>
+                          <?php endif;?>
                           <a href="mailto:<?=$email?>"><?=$email?></a>
                       </div>
                   </div>

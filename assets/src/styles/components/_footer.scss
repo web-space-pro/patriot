@@ -74,8 +74,9 @@
       *{
         margin-bottom: rem(16);
       }
-      address{
-        font-style: normal;
+      a{
+        display: block;
+        width: max-content;
       }
     }
   }

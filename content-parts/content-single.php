@@ -17,9 +17,9 @@
             <?php the_title(); ?>
         </h1>
         <?php if(! is_page()): ?>
-            <time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished" class="post__date">
-                <?php echo get_the_date(); ?>
-            </time>
+<!--            <time datetime="--><?php //echo get_the_date( 'c' ); ?><!--" itemprop="datePublished" class="post__date">-->
+<!--                --><?php //echo get_the_date(); ?>
+<!--            </time>-->
         <?php endif; ?>
     </header>
     <div class="post__content">

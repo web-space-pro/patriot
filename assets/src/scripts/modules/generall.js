@@ -1,41 +1,23 @@
-(function ($, root, undefined) {
-    $('a[href^="/#"]').on('click', function(e) {
+document.querySelectorAll('a[href^="/#"], a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
-        let href = $(this).attr('href');
-        let target = href.split('#')[1]; // Извлекаем ID
+        const href = this.getAttribute('href');
+        const target = href.split('#')[1];
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 0;
+        const targetElement = document.getElementById(target);
 
-        if (target && target.length) {
-            let location = window.location.origin;
-            let headerHeight = $('header').innerHeight();
-
-            if ($('#' + target).length) {
-                $('html, body').animate({
-                    scrollTop: $('#' + target).offset().top - headerHeight
-                }, 'fast');
-            } else {
-                window.location.href = location + '/#' + target;
-            }
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - headerHeight,
+                behavior: 'smooth'
+            });
+        } else if (href.startsWith('/#')) {
+            window.location.href = window.location.origin + '/#' + target;
         }
     });
-
-    $('a[href^="#"]').on('click', function(e) {
-        e.preventDefault();
-
-        let href = $(this).attr('href');
-        let target = href.split('#')[1];
-
-        if (target && target.length) {
-            let headerH = $('header').innerHeight();
-
-            if ($('#' + target).length) {
-                $('html, body').animate({
-                    scrollTop: $('#' + target).offset().top - headerH
-                }, 'fast');
-            }
-        }
-    });
-})(jQuery);
+});
 
 function toggleHeaderScroll() {
     const header = document.querySelector('header');

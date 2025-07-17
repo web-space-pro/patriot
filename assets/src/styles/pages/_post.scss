@@ -21,7 +21,7 @@
       clip-path: polygon(32px 0, 100% 0, 100% calc(100% - 32px), calc(100% - 32px) 100%, 0 100%, 0 32px);
     }
     &__thumbnail {
-      aspect-ratio: auto;
+      aspect-ratio: 16 / 9;
       width: 100%;
       object-fit: cover;
     }

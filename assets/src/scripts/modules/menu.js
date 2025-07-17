@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const burger = document.querySelector(".burger input");
     const mobileMenu = document.querySelector(".mobileMenu");
+    const menuItems = mobileMenu.querySelectorAll(".menu-item");
     const header = document.querySelector(".header");
     const noScroll = document.querySelector("html");
     const dropdowns = mobileMenu.querySelectorAll(".menu-item-has-children");
@@ -10,6 +11,12 @@ document.addEventListener("DOMContentLoaded", function () {
         mobileMenu.classList.toggle("active");
         header.classList.toggle("openid");
         noScroll.classList.toggle("t-overflow");
+    });
+
+    menuItems.forEach(item => {
+        item.addEventListener("click", function () {
+            burger.click();
+        });
     });
 
     // Обработка кликов на элементы с sub-menu

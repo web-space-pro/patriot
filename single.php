@@ -47,7 +47,6 @@ get_header();
                                             </div>
                                         <?php endif; ?>
                                         <div class="loop-posts__content">
-                                            <time class="loop-posts__date"><?php echo get_the_date('d.m.Y'); ?></time>
                                             <h3 class="loop-posts__title"><?php the_title(); ?></h3>
                                             <p class="loop-posts__excerpt"><?php echo wp_trim_words( get_the_excerpt(), 12, '...' ); ?></p>
                                         </div>
